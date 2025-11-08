@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IConduct.Application\IConduct.Application.csproj" />
+  </ItemGroup>
+
 </Project>
