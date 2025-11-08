@@ -21,10 +21,13 @@ namespace IConduct.API
 
             builder.Services.AddInfrastructure();
             builder.Services.AddServices();
-            
+
+            builder.Services.AddGlobalRateLimiter();
             builder.Services.AddControllers();
 
             var app = builder.Build();
+
+            app.UseRateLimiter();
 
             app.MapOpenApi();
             app.UseSwaggerUI(c =>

@@ -2,11 +2,13 @@
 using IConduct.Application.Interfaces;
 using IConduct.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace IConduct.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableRateLimiting("global-limiter-policy")]
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeManager _employeeManager;
