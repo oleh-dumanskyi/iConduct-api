@@ -4,7 +4,7 @@ namespace IConduct.Domain.Interfaces.Repositories
 {
     public interface IEmployeeRepository
     {
-        Employee GetEmployeeById(int id);
-        bool EnableEmployee(int id);
+        Task<List<Employee>> GetFlatEmployeeDataByIdAsync(int id, CancellationToken cancellationToken = default);
+        Task<bool> EnableEmployeeAsync(int id, CancellationToken cancellationToken = default);
     }
 }
